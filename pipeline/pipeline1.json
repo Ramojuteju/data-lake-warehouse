@@ -26,9 +26,15 @@
 						}
 					},
 					"sink": {
-						"type": "AzureSqlSink",
-						"writeBehavior": "insert",
-						"sqlWriterUseTableLock": false
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
 					},
 					"enableStaging": false
 				},
@@ -40,7 +46,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "sqldb",
+						"referenceName": "gen2",
 						"type": "DatasetReference"
 					}
 				]
