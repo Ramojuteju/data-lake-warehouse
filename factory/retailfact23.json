@@ -1,0 +1,9 @@
+{
+	"name": "retailfact23",
+	"location": "canadacentral",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "2556e1d0-1f44-4bc2-949c-e8bb0f3cb751",
+		"tenantId": "32e6e18b-76be-433f-82ae-805603a70e49"
+	}
+}
