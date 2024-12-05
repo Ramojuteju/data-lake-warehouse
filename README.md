@@ -22,6 +22,7 @@
 
 ## Microsoft Entra ID:
 <img width="1728" alt="MEntraID" src="https://github.com/user-attachments/assets/9d801a5a-2c52-4fdb-ab83-4bd52e0bcbc9">
+<img width="1719" alt="SecretID" src="https://github.com/user-attachments/assets/6dbf3efd-9379-4c38-b53a-fe9f3914fdaf">
 
 * Used for the Azure Default Directory application to manage the Service Principal.
 * Azure Key Vault: Securely stores Service Principal credentials.
@@ -80,8 +81,6 @@
 <img width="1742" alt="Secretscope" src="https://github.com/user-attachments/assets/773cc39e-fe19-4a32-bf54-44827bebd259">
 
 * Generate client ID, tenant ID, and client secret (store it in Key Vault).
-<img width="1719" alt="SecretID" src="https://github.com/user-attachments/assets/6dbf3efd-9379-4c38-b53a-fe9f3914fdaf">
-
 * Assign required RBAC roles to the Service Principal for accessing Azure resources.
 
 ## Using Azure Key Vault
