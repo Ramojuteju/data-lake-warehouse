@@ -424,7 +424,7 @@ dbutils.fs.ls() fetches the contents of the specified ADLS path.
 * Discrepancies between the data in the warehouse and the original source.
 * Data Pipeline Auditing: Implement and monitor auditing logic to check if the data in Synapse matches the source after transformations.
 * Time-Travel in Delta: Use Delta Lake’s time-travel feature to query previous versions of data.
-### Security Troubleshooting Points
+### 5. Security Troubleshooting Points
 ### Access Denied Issues
 * Errors due to lack of access permissions (e.g., in Data Lake or Synapse).
 * Review RBAC Permissions: Ensure the right roles are assigned to users or service principals (e.g., Reader, Contributor).
