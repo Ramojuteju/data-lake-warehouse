@@ -450,3 +450,55 @@ dbutils.fs.ls() fetches the contents of the specified ADLS path.
 * Implement Retry Logic: Set retry logic in pipelines to recover from transient issues like network failures or timeouts.
 * Set Up Alerts: Use Azure Monitor to configure alerts for pipeline failures, performance issues, and data quality problems.
 * Use Version Control: Use Git integration for pipeline version control, ensuring that changes can be tracked and reverted if necessary.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Connecting to Synapse Analytics Using a Dedicated Pool with an Integration Pipeline
+### 1. Staging the Data
+* Sample Data: A CSV file named newsales.csv is used as the source.
+<img width="1548" alt="staging data" src="https://github.com/user-attachments/assets/8fff3a92-133e-4993-bac7-7aaae459e50f">
+
+### 2. Connecting to the Dedicated Pool
+* Choose Existing Pool: Select the dedicated pool named mypool.
+<img width="1521" alt="mypool" src="https://github.com/user-attachments/assets/55b74588-81bb-4b2e-a2a1-8f6b894a25aa">
+
+## 3. Creating a Table
+* Develop SQL Script: Go to the Develop section in Synapse Studio.
+* Open a new SQL script to create the target table.
+<img width="1890" alt="table creation" src="https://github.com/user-attachments/assets/ddc8f489-c0fb-4be8-9cea-c32fa4c68684">
+
+## 4. Building the Data Integration Pipeline
+* Create Pipeline: Navigate to the Integrate section in Synapse Studio.
+* Select New Pipeline and name it.
+* Add Copy Data Activity: From the activity pane, drag and drop the Copy Data activity into the canvas.
+
+## 5. Source Configuration
+* Linked Service: Connect to the Azure Data Lake Storage Gen2 linked service.
+* File Format: Select Delimited Text as the format.
+* Source Details: Choose the storage account: synastorage23.
+* Specify the container: staging.
+* Point to the file: newsales.csv.
+<img width="1806" alt="source" src="https://github.com/user-attachments/assets/fa1c2b58-ab51-4d27-8b2b-30fe749feadc">
+
+### 6. Sink Configuration
+* Linked Service: Connect to the Dedicated SQL Pool linked service.
+* Target Pool: Select the pool: mypool.
+* Table Name: Specify the table name: dbo.newsales.
+<img width="1859" alt="sink" src="https://github.com/user-attachments/assets/b299c645-d2ae-46f5-8659-eb4a9093f2a0">
+
+### 7. Mapping
+* Use the Import Schema feature to map source columns to the target table.
+* Adjust the column mappings if necessary.
+<img width="1803" alt="mapping" src="https://github.com/user-attachments/assets/2b9a2436-6a2b-4f69-8325-b240e06501f1">
+
+### 8. Publish, Validate, and Debug
+* Publish: Save and publish the pipeline.
+* Validate: Use the Validate button to check for errors.
+* Debug: Run the pipeline in Debug mode to test its functionality.
+
+### 9. Successful Pipeline Execution
+* Once the pipeline executes successfully, verify the data in the dbo.newsales table within the dedicated pool using a SQL query: SELECT * FROM dbo.newsales;
+<img width="1896" alt="pipeline" src="https://github.com/user-attachments/assets/12407109-99e5-45d2-a9d9-afa16ed8913b">
+<img width="1565" alt="external Table" src="https://github.com/user-attachments/assets/2d44df55-213f-4fb8-ae81-bb481f40d771">
+<img width="1593" alt="Output" src="https://github.com/user-attachments/assets/02ad1623-0b63-4d24-a3b5-5571fb04070c">
+
+
+
