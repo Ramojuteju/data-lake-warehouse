@@ -2,7 +2,7 @@
 	"name": "SQL script 1",
 	"properties": {
 		"content": {
-			"query": "CREATE TABLE dbo.Sales (\n    [OrderID] nvarchar(400),\n    [CustomerID] nvarchar(400),\n    [EmployeeID] nvarchar(400),\n    [OrderDate] nvarchar(400),\n    [ShipperID] nvarchar(400)\n);\n\n",
+			"query": "CREATE TABLE dbo.Sales23 (\n    [OrderID] nvarchar(400),\n    [CustomerID] nvarchar(400),\n    [EmployeeID] nvarchar(400),\n    [OrderDate] nvarchar(400),\n    [ShipperID] nvarchar(400)\n);\n\n",
 			"metadata": {
 				"language": "sql"
 			},
