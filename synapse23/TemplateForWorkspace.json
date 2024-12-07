@@ -247,7 +247,7 @@
 				],
 				"typeProperties": {
 					"schema": "dbo",
-					"table": "Sales"
+					"table": "Sales23"
 				},
 				"sqlPool": {
 					"referenceName": "mypool",
@@ -272,7 +272,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
-						"fileName": "Sales.csv",
+						"fileName": "Sales12",
 						"fileSystem": "staging"
 					},
 					"columnDelimiter": ",",
@@ -657,7 +657,7 @@
 			"apiVersion": "2019-06-01-preview",
 			"properties": {
 				"content": {
-					"query": "CREATE TABLE dbo.Sales (\n    [OrderID] nvarchar(400),\n    [CustomerID] nvarchar(400),\n    [EmployeeID] nvarchar(400),\n    [OrderDate] nvarchar(400),\n    [ShipperID] nvarchar(400)\n);\n\n",
+					"query": "CREATE TABLE dbo.Sales23 (\n    [OrderID] nvarchar(400),\n    [CustomerID] nvarchar(400),\n    [EmployeeID] nvarchar(400),\n    [OrderDate] nvarchar(400),\n    [ShipperID] nvarchar(400)\n);\n\n",
 					"metadata": {
 						"language": "sql"
 					},
@@ -677,7 +677,7 @@
 			"apiVersion": "2019-06-01-preview",
 			"properties": {
 				"content": {
-					"query": "IF NOT EXISTS (SELECT * FROM sys.external_file_formats WHERE name = 'SynapseDelimitedTextFormat') \n\tCREATE EXTERNAL FILE FORMAT [SynapseDelimitedTextFormat] \n\tWITH ( FORMAT_TYPE = DELIMITEDTEXT ,\n\t       FORMAT_OPTIONS (\n\t\t\t FIELD_TERMINATOR = ',',\n\t\t\t USE_TYPE_DEFAULT = FALSE\n\t\t\t))\nGO\n\nIF NOT EXISTS (SELECT * FROM sys.external_data_sources WHERE name = 'staging_synastorage23_dfs_core_windows_net') \n\tCREATE EXTERNAL DATA SOURCE [staging_synastorage23_dfs_core_windows_net] \n\tWITH (\n\t\tLOCATION = 'abfss://staging@synastorage23.dfs.core.windows.net', \n\t\tTYPE = HADOOP \n\t)\nGO\n\nCREATE EXTERNAL TABLE dbo.Sales (\n\t[C1] nvarchar(4000),\n\t[C2] nvarchar(4000),\n\t[C3] nvarchar(4000),\n\t[C4] nvarchar(4000),\n\t[C5] nvarchar(4000),\n\t[C6] nvarchar(4000)\n\t)\n\tWITH (\n\tLOCATION = 'Sales.csv',\n\tDATA_SOURCE = [staging_synastorage23_dfs_core_windows_net],\n\tFILE_FORMAT = [SynapseDelimitedTextFormat]\n\t)\nGO\n\n\nSELECT TOP 100 * FROM dbo.Sales\nGO",
+					"query": "IF NOT EXISTS (SELECT * FROM sys.external_file_formats WHERE name = 'SynapseDelimitedTextFormat') \n\tCREATE EXTERNAL FILE FORMAT [SynapseDelimitedTextFormat] \n\tWITH ( FORMAT_TYPE = DELIMITEDTEXT ,\n\t       FORMAT_OPTIONS (\n\t\t\t FIELD_TERMINATOR = ',',\n\t\t\t USE_TYPE_DEFAULT = FALSE\n\t\t\t))\nGO\n\nIF NOT EXISTS (SELECT * FROM sys.external_data_sources WHERE name = 'staging_synastorage23_dfs_core_windows_net') \n\tCREATE EXTERNAL DATA SOURCE [staging_synastorage23_dfs_core_windows_net] \n\tWITH (\n\t\tLOCATION = 'abfss://staging@synastorage23.dfs.core.windows.net', \n\t\tTYPE = HADOOP \n\t)\nGO\n\nCREATE EXTERNAL TABLE dbo.Sales12 (\n\t[C1] nvarchar(4000),\n\t[C2] nvarchar(4000),\n\t[C3] nvarchar(4000),\n\t[C4] nvarchar(4000),\n\t[C5] nvarchar(4000),\n\t[C6] nvarchar(4000)\n\t)\n\tWITH (\n\tLOCATION = 'Sales12.csv',\n\tDATA_SOURCE = [staging_synastorage23_dfs_core_windows_net],\n\tFILE_FORMAT = [SynapseDelimitedTextFormat]\n\t)\nGO\n\n\nSELECT TOP 100 * FROM dbo.Sales12\nGO",
 					"metadata": {
 						"language": "sql"
 					},
