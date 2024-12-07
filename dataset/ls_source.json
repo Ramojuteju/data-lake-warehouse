@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "Sales12",
+				"fileName": "newsales",
 				"fileSystem": "staging"
 			},
 			"columnDelimiter": ",",

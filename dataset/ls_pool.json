@@ -27,7 +27,7 @@
 		],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "Sales23"
+			"table": "newsales"
 		},
 		"sqlPool": {
 			"referenceName": "mypool",
