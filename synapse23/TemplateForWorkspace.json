@@ -108,8 +108,13 @@
 							},
 							"sink": {
 								"type": "SqlPoolSink",
-								"allowCopyCommand": true,
-								"copyCommandSettings": {}
+								"writeBehavior": "Upsert",
+								"upsertSettings": {
+									"keys": [
+										"OrderID"
+									],
+									"interimSchemaName": ""
+								}
 							},
 							"enableStaging": false,
 							"translator": {
@@ -165,7 +170,12 @@
 											"type": "String"
 										}
 									}
-								]
+								],
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
 							}
 						},
 						"inputs": [
@@ -251,7 +261,7 @@
 				],
 				"typeProperties": {
 					"schema": "dbo",
-					"table": "table_name"
+					"table": "Sales"
 				},
 				"sqlPool": {
 					"referenceName": "mypool",
