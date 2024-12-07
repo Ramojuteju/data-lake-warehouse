@@ -1,0 +1,41 @@
+{
+	"name": "ls_pool",
+	"properties": {
+		"annotations": [],
+		"type": "SqlPoolTable",
+		"schema": [
+			{
+				"name": "OrderID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CustomerID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "EmployeeID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "OrderDate",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ShipperID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "C6",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "table_name"
+		},
+		"sqlPool": {
+			"referenceName": "mypool",
+			"type": "SqlPoolReference"
+		}
+	}
+}

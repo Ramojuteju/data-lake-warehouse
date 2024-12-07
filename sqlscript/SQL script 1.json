@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 1",
+	"properties": {
+		"content": {
+			"query": "CREATE TABLE dbo.Sales (\n    [OrderID] nvarchar(400),\n    [CustomerID] nvarchar(400),\n    [EmployeeID] nvarchar(400),\n    [OrderDate] nvarchar(400),\n    [ShipperID] nvarchar(400)\n);\n\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "mypool",
+				"poolName": "mypool"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
