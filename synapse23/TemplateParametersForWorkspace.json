@@ -1,0 +1,48 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"workspaceName": {
+			"value": "synapse23"
+		},
+		"newretailsynapse-WorkspaceDefaultSqlServer_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:newretailsynapse.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
+		},
+		"retailsynapse23-WorkspaceDefaultSqlServer_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:retailsynapse23.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
+		},
+		"source_accountKey": {
+			"value": ""
+		},
+		"synapse23-WorkspaceDefaultSqlServer_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:synapse23.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
+		},
+		"ls_HttpServer_properties_typeProperties_url": {
+			"value": "https://fakestoreapi.com/products"
+		},
+		"ls_keyvault_properties_typeProperties_baseUrl": {
+			"value": "https://retailkeyvault.vault.azure.net/"
+		},
+		"ls_sqldb_properties_typeProperties_server": {
+			"value": "retailserver23.database.windows.net"
+		},
+		"ls_sqldb_properties_typeProperties_database": {
+			"value": "retaildbase"
+		},
+		"ls_sqldb_properties_typeProperties_userName": {
+			"value": "sqluseradmin"
+		},
+		"newretailsynapse-WorkspaceDefaultStorage_properties_typeProperties_url": {
+			"value": "https://mywarehouse23.dfs.core.windows.net"
+		},
+		"retailsynapse23-WorkspaceDefaultStorage_properties_typeProperties_url": {
+			"value": "https://synaaccount.dfs.core.windows.net"
+		},
+		"source_properties_typeProperties_url": {
+			"value": "https://synastorage23.dfs.core.windows.net/"
+		},
+		"synapse23-WorkspaceDefaultStorage_properties_typeProperties_url": {
+			"value": "https://synastorage23.dfs.core.windows.net"
+		}
+	}
+}
