@@ -23,10 +23,6 @@
 			{
 				"name": "ShipperID",
 				"type": "nvarchar"
-			},
-			{
-				"name": "C6",
-				"type": "nvarchar"
 			}
 		],
 		"typeProperties": {

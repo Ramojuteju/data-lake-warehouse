@@ -28,13 +28,7 @@
 					},
 					"sink": {
 						"type": "SqlPoolSink",
-						"writeBehavior": "Upsert",
-						"upsertSettings": {
-							"keys": [
-								"OrderID"
-							],
-							"interimSchemaName": ""
-						}
+						"allowCopyCommand": true
 					},
 					"enableStaging": false,
 					"translator": {
@@ -90,12 +84,7 @@
 									"type": "String"
 								}
 							}
-						],
-						"typeConversion": true,
-						"typeConversionSettings": {
-							"allowDataTruncation": true,
-							"treatBooleanAsNumber": false
-						}
+						]
 					}
 				},
 				"inputs": [
